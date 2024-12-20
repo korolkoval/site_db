@@ -36,6 +36,12 @@ class Items extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getTypeOption()
+    {
+        return $this->hasOne(TypeOptions::class, ['id' => 'type']);
+    }
+
+
     /**
      * {@inheritdoc}
      */

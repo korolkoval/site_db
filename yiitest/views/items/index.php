@@ -31,7 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'serial_number',
-            'type',
+            [
+                'attribute' => 'type',
+                'value' => function ($model) {
+                    return $model->typeOption ? $model->typeOption->name : null;
+                },
+            ],
             'date',
             'status',
             [
